@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legacy & Code | Black Tech Stories</title>
+    <style>
+        :root {
+            --primary: #6E3BEC; /* Afro-futurist purple */
+            --secondary: #FF9500; /* Vibrant orange */
+            --dark: #1A1A2E;
+            --light: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .logo {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: -webkit-linear-gradient(var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background-color: rgba(0,0,0,0.3);
+        }
+        
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: url('https://example.com/hero-bg.jpg') center/cover;
+        }
+        
+        .episode-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .qr-code {
+            width: 150px;
+            margin: 1rem auto;
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #000;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">LEGACY & CODE</div>
+        <div class="tagline">Where Black tech potential meets opportunity</div>
+    </header>
+    
+    <nav>
+        <a href="#episodes">Episodes</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section class="hero">
+        <h1>Student Stories. Tech Hustles. Community Impact.</h1>
+        <p>10-minute interviews with Boston's rising Black tech innovators</p>
+    </section>
+    
+    <section id="episodes" class="episode-card">
+        <h2>Latest Episode: "From Classroom to Codebase"</h2>
+        <div class="video-container">
+            <!-- Embedded YouTube/Vimeo player would go here -->
+            <img src="https://via.placeholder.com/800x450" alt="Episode thumbnail" style="width:100%">
+        </div>
+        <p>CS senior Jamal Williams shares how he turned a class project into a funded app for Roxbury businesses.</p>
+        
+        <h3>Featured Resources</h3>
+        <img src="qrcode.png" alt="Scan for hackathon resources" class="qr-code">
+        <p>Scan for free hackathon prep kit</p>
+    </section>
+    
+    <section id="resources" class="episode-card">
+        <h2>Student Toolkit</h2>
+        <ul>
+            <li><strong>Business Innovation Center:</strong> Free mentorship for student projects</li>
+            <li><strong>Hackathon Calendar:</strong> Upcoming Boston-area competitions</li>
+            <li><strong>Resume Templates:</strong> Tech recruiter-approved formats</li>
+        </ul>
+    </section>
+  
+  <section id="credits" class="episode-card">
+  <h2>Made Possible By</h2>
+  <p>This project was created for RCC's BMT 100 course with support from:</p>
+  <ul>
+    <li>RCC Business Innovation Center</li>
+    <li>RCC Computer Science Club</li>
+    <li>Professor [Name]</li>
+  </ul>
+  <p><em>Production Team: [Your Name] (Lead), [Friend’s Name] (PA)</em></p>
+</section>
+    
+    <footer>
+        <p>Follow us: @LegacyAndCode</p>
+        <p>Produced in partnership with RCC's BMT 100 course && Computer Science Club </p>
+    </footer>
+</body>
+</html>
