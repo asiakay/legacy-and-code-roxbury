@@ -25,6 +25,29 @@
             padding: 2rem;
             text-align: center;
         }
+      
+      /* Image Header Styles */
+.nav-header-image {
+    width: 100%;
+    height: 250px; /* Fixed height for consistency */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000; /* Fallback if image doesn't load */
+}
+
+.nav-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Adjust navigation to account for new header */
+nav {
+    margin-top: 0; /* Remove any default margin */
+}
         
         .logo {
             font-family: 'Space Mono', monospace;
@@ -100,6 +123,11 @@
         <div class="logo">LEGACY & CODE</div>
         <div class="tagline">Where Black tech potential meets opportunity</div>
     </header>
+
+<!-- image header section -->
+<div class="nav-header-image">
+    <img src="https://cdn.glitch.global/de24c1b0-7e4d-497d-9d40-fc14461f0945/thumbnails%2FLegacy%20%26Code.png?1746895302709" alt="Legacy & Code Header Image">
+</div>
     
     <nav>
         <a href="#episodes">Episodes</a>
