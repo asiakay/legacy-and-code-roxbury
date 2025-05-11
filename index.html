@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legacy & Code | Black Tech Stories</title>
-    <style>
+<style>
         :root {
             --primary: #6E3BEC; /* Afro-futurist purple */
             --secondary: #FF9500; /* Vibrant orange */
@@ -71,12 +71,59 @@
             margin: 1rem auto;
             display: block;
         }
-
-
-      
-      
-      
         
+        .credits {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .acknowledgments {
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-left: 4px solid var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .credit-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .credit-category {
+            font-weight: bold;
+            margin-top: 1.5rem;
+            color: var(--secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        .copyright {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+        
+  
+  .support-detail {
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+  
+  .info-link {
+    color: var(--secondary);
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+  
+  .info-link svg {
+    display: inline-block;
+    vertical-align: baseline;
+  }
         footer {
             text-align: center;
             padding: 2rem;
@@ -117,10 +164,10 @@
     </section>
     
     <section id="episodes" class="episode-card">
-        <h2>Coming soon - Episode 1: "How to hack a hackathon"</h2>
+        <h2>POV Behind the Scenes : "How to hack a hackathon"</h2>
         <div class="video-container">
             <!-- Embedded YouTube/Vimeo player would go here -->
-            <img src="https://cdn.glitch.global/de24c1b0-7e4d-497d-9d40-fc14461f0945/thumbnails%2FLegacy%20%26Code.png?1746895302709" alt="Episode thumbnail" style="width:100%">
+            <img src="https://cdn.glitch.global/de24c1b0-7e4d-497d-9d40-fc14461f0945/2.png?v=1746938580992" alt="Episode thumbnail" style="width:100%">
         </div>
         <p>Our host, RCC's STEM Liason, Brenda Maria sits down with Santiago, RCC's Computer Science Club Co-President to talk RCC's 1st Hackathon and how you can take the first steps to get involved on a path to tech.</p>
         
@@ -141,21 +188,71 @@
             <li><strong>Resume Templates:</strong> Tech recruiter-approved formats</li>
         </ul>
     </section>
+<div class="credits">
+  <h3>Legacy & Code</h3>
   
-  <section id="credits" class="episode-card">
-  <h2>Made Possible By</h2>
-  <p>This project was created for RCC's BMT 100 course with support from:</p>
-  <ul>
-    <li>RCC Business Innovation Center</li>
-    <li>RCC Computer Science Club</li>
-    <li>Professor Justin Petty</li>
+  <div class="acknowledgments">
+    <p><em>Made possible with support from:</em></p>
+    <ul>
+      <li>
+            <strong>RCC Bridge Fund</strong> 
+      <span class="support-detail">(Emergency grant through Project Access)</span>
+      <a href="https://www.rcc.mass.edu/explore/donate/bridge-fund.html" class="info-link" aria-label="Learn about RCC Bridge Fund">
+        <svg width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01"/>
+        </svg>
+      </a>
+</li>
+      <li><strong>RCC Business Innovation Center</strong> (Pitch presentation)</li>
+    
+    </ul>
+  </div>
+
+  <div class="production-team">
+ <ul class="credit-list">
+    <!-- Executive Leadership -->
+    <li class="credit-category">Executive Leadership</li>
+    <li><strong>Justin Petty</strong> — Executive Producer</li>
+    
+    <!-- Creative Leadership -->
+    <li class="credit-category">Creative Leadership</li>
+    <li><strong>Asia Grady</strong> — Producer & Director</li>
+    <li><strong>Carlos Peña</strong> — Assistant Director</li>
+    
+    <!-- Technical Team -->
+    <li class="credit-category">Technical Team</li>
+    <li><strong>Darius Lewis</strong> — Technical Director</li>
+    <li><strong>Jenilson Andrade</strong> — Floor Manager</li>
+    
+    <!-- Audio Department -->
+    <li class="credit-category">Audio Department</li>
+    <li><strong>Faithly Desravines</strong> — Audio Engineer</li>
+    <li><strong>Brendan Driscoll</strong> — Audio Assistant</li>
+    
+    <!-- Camera Department -->
+    <li class="credit-category">Camera Department</li>
+    <li><strong>Mykel Reid</strong> — Camera Operator #1 (Host)</li>
+    <li><strong>Patrick Carbury</strong> — Camera Operator #2 (Guest)</li>
+    <li><strong>Seana Fuller</strong> — Camera Operator #3 (Safety)</li>
+    <li><strong>Minh Nguyen</strong> — Video Recordist</li>
+    
+    <!-- Graphics -->
+    <li class="credit-category">Graphics</li>
+    <li><strong>James Green</strong> — CG Operator</li>
   </ul>
-  <p><em>Production Team: Justin Petty - Executive Producer,  Asia Grady - Producer/Director, Carlos Peña - Assistant Director</em></p>
-</section>
+  </div>
+
+  <div class="copyright">
+    <p>© 2025 Asia Grady. Produced as part of RCC's BMT 100 coursework.</p>
+    <p>Not an official Roxbury Community College production.</p>
+  </div>
+</div>
+  
+  
     
     <footer>
         <p>Follow us: @LegacyAndCode</p>
-        <p>Produced in partnership with RCC's BMT 100 course && Computer Science Club </p>
+        <p>Produced in partnership with students from RCC's Spring 2025 BMT 110 course.</p>
     </footer>
 </body>
 </html>
