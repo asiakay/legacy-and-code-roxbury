@@ -71,6 +71,62 @@
             margin: 1rem auto;
             display: block;
         }
+
+/* resources list  */
+.resources-list {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+.resources-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.resources-list li {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-left: 3px solid var(--primary);
+}
+
+.resources-list li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-left-color: var(--secondary);
+}
+
+.resources-list a {
+    display: block;
+    padding: 1rem;
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resources-list a:hover {
+    color: var(--secondary);
+}
+
+.resources-list .list-header {
+    grid-column: 1 / -1;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .resources-list ul {
+        grid-template-columns: 1fr;
+    }
+}
         
         .credits {
             background: rgba(255,255,255,0.1);
@@ -170,7 +226,9 @@
             <img src="https://cdn.glitch.global/de24c1b0-7e4d-497d-9d40-fc14461f0945/2.png?v=1746938580992" alt="Episode thumbnail" style="width:100%">
         </div>
         <p>Our host, RCC's STEM Liason, Brenda Maria sits down with Santiago, RCC's Computer Science Club Co-President to talk RCC's 1st Hackathon and how you can take the first steps to get involved on a path to tech.</p>
-        
+      <h3>Events
+      </h3>  
+     <a href="https://www.eventbrite.com/e/game-of-deeds-impact-a-thon-tickets-1370416274969?aff=oddtdtcreator"> <img src="https://cdn.glitch.global/de24c1b0-7e4d-497d-9d40-fc14461f0945/Haiti.jpeg?v=1747940448601" width="100%"></a>
         <h3>Featured Resources</h3>
      <a href="https://hackingthearchive.mit.edu/"> <img src="https://github.com/asiakay/legacy-and-code-roxbury/blob/main/assets/images/racial-wealth-gap-hackathon.png?raw=true" style="width:100%"></a>
        <!-- <img src="qrcode.png" alt="Scan for hackathon resources" class="qr-code"> -->
@@ -181,7 +239,23 @@
     </section>
     
     <section id="resources" class="episode-card">
-        <h2>Student Toolkit</h2>
+   <div class="resources-list">
+    <h3 class="list-header">Resource Directory</h3>
+    <ul>
+     
+        <li><a href="https://shehacks.io/resources/" target="_blank" rel="noopener noreferrer">shehacks.io</a></li>
+        <li><a href="https://coding4climate.org/" target="_blank" rel="noopener noreferrer">coding4climate.org</a></li>
+        <li><a href="https://modernstates.org/" target="_blank" rel="noopener noreferrer">modernstates.org</a></li>
+        <li><a href="https://groundedsolutions.org/tools-success/" target="_blank" rel="noopener noreferrer">groundedsolutions.org</a></li>
+        <li><a href="https://www.ujimaboston.com/study" target="_blank" rel="noopener noreferrer">ujimaboston.com/study</a></li>
+    <li><a href="https://www.google.com/about/careers/applications/students?q=Research%20Intern&employment_type=INTERN&degree=PURSUING_DEGREE" target="_blank" rel="noopener noreferrer">
+        Google Careers : Student Resources</a></li>
+     
+     </ul>
+</div>
+      
+      
+      <h2>Student Toolkit</h2>
         <ul>
             <li><strong>Business Innovation Center:</strong> Free mentorship for student projects</li>
             <li><strong>Hackathon Calendar:</strong> Upcoming Boston-area competitions</li>
