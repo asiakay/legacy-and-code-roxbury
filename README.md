@@ -1,48 +1,64 @@
-# Hello website!
+# Legacy & Code Roxbury  
+**Turning Legacy into Code, Building Roxbury’s Future**
 
-This is a basic HTML starter project you can build on however you like. No need to save. While you develop your site, your changes will happen ✨ immediately in the preview window. On the left you'll see the files that make up your site, including HTML, JavaScript, and CSS. You can upload assets like images or audio in `assets`. The rest is up to you and your imagination. 🦄
+## 🚀 Project Overview  
+Legacy & Code Roxbury is a web-based showcase and community project highlighting Roxbury’s cultural legacy while building forward-facing code, tools, and interactive experiences that empower youth and local creators.  
 
-_Last updated: 28 Feb 2023_
+The “legacy” represents our stories and heritage.  
+The “code” represents the digital skills, platforms, and creative infrastructure we’re building.
 
-## What's in this project?
+## 📌 Key Features  
+- Responsive web front-end (HTML / CSS / JavaScript)  
+- `assets/` folder for images, audio, and media  
+- Clear roadmap via `TODO.md`  
+- Modular structure for remixing and expansion  
+- Community-centric design: built with local creators, youth, and educators in mind
 
-← `README.md`: That's this file, where you can tell people what your cool website does and how you built it.
+## 🎯 Why This Matters  
+- Roxbury’s artistic and sociopolitical history deserves visibility in tech spaces.  
+- This project bridges heritage and digital creativity to build confidence, skills, and opportunities.  
+- Youth gain hands-on experience: coding, producing, designing, storytelling.  
+- Strengthens community through technology and shared expression.
 
-← `index.html`: This is the main web page for your site. The HTML defines the structure and content of the page using _elements_. You'll see references in the HTML to the JS and CSS files. Try clicking the image in the center of the page!
+## 🛠️ Getting Started  
 
-← `style.css`: CSS files add styling rules to your content. The CSS applies styles to the elements in your HTML page. The style rules also make the image move when you click it.
-
-← `script.js`: If you're feeling fancy you can add interactivity to your site with JavaScript. The code in the JavaScript file runs when the page loads, and when the visitor clicks the button you can add using the code in the TODO.
-
-Open each file and check out the comments (in gray) for more info.
-
-## Try this next 🏗️
-
-Take a look in `TODO.md` for next steps you can try out in your new site!
-
-___Want a minimal version of this project to build your own website? Check out [Blank Website](https://glitch.com/edit/#!/remix/glitch-blank-website)!___
-
-## Ready to share your site?
-
-Add these meta tags for SEO and social sharing between your page `<head></head>` tags, changing the values for your site:
-
-```
-<link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-<meta name="description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta name="robots" content="index,follow" />
-<meta property="og:title" content="Hello World!" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-<meta property="og:description" content="A simple website, built with Glitch. Remix it to get your own."/>
-<meta property="og:image" content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"/>
-<meta name="twitter:card" content="summary" />
+### Clone the repository
+```bash
+git clone https://github.com/asiakay/legacy-and-code-roxbury.git
 ```
 
-![Glitch](https://cdn.glitch.com/a9975ea6-8949-4bab-addb-8a95021dc2da%2FLogo_Color.svg?v=1602781328576)
+### Open the project  
+- Navigate into the folder.  
+- Open `index.html` in your browser.  
+- Explore `TODO.md` to pick a feature or improvement to work on.
 
-## You built this with Glitch!
+### Add content  
+- Place images/audio/video files in `assets/`.  
+- Update `index.html` or `script.js` as needed.  
+- Document your changes and open a pull request.
 
-[Glitch](https://glitch.com) is a friendly community where millions of people come together to build web apps and websites.
+## 🧑‍💻 Tech Stack  
+- HTML5  
+- CSS3 (responsive design)  
+- Vanilla JavaScript  
+- Community-contributed assets  
+- See `LICENSE` for usage permissions
 
-- Need more help? [Check out our Help Center](https://help.glitch.com/) for answers to any common questions.
-- Ready to make it official? [Become a paid Glitch member](https://glitch.com/pricing) to boost your app with private sharing, more storage and memory, domains and more.
+## 📈 Roadmap  
+- [ ] Interactive music map featuring Roxbury artists  
+- [ ] DJ/producer interview micro-series  
+- [ ] STEM-based mini-games (music theory, math, art)  
+- [ ] Youth mentorship portal for UX, AI mediation, media production  
+- [ ] Impact & monetization model (workshops, sponsorships, revenue share)
+
+## 👥 How to Contribute  
+1. Open an issue with a bug or feature request.  
+2. Fork the repo and create a branch for your work.  
+3. Write clean, well-commented code.  
+4. Submit a pull request with notes on what you changed.  
+5. Credit community content and media appropriately.
+
+## 📜 Credits & Acknowledgements  
+- Built by **Asiakay** and contributors.  
+- Inspired by the intersection of culture, creativity, technology, and community empowerment.  
+- Honoring the legacy of Roxbury artists and creators whose stories fuel this project.
