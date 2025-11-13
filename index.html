@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legacy & Code | Black Tech Stories</title>
-<style>
+    <style>
         :root {
             --primary: #6E3BEC; /* Afro-futurist purple */
             --secondary: #FF9500; /* Vibrant orange */
             --dark: #1A1A2E;
             --light: #F5F5F5;
+            --accent: #00D4FF;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -18,12 +27,36 @@
             background-color: var(--dark);
             color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .site-header {
             background: linear-gradient(135deg, var(--primary), var(--dark));
             padding: 2rem 1rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(110, 59, 236, 0.4) 0%, 
+                rgba(255, 149, 0, 0.2) 50%, 
+                rgba(0, 212, 255, 0.3) 100%);
+            animation: gradient-shift 8s ease infinite;
+            z-index: 0;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         
         .header-logo {
@@ -32,6 +65,14 @@
             height: auto;
             margin: 0 auto;
             display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+            transition: transform 0.5s ease;
+        }
+        
+        .header-logo:hover {
+            transform: scale(1.02);
         }
         
         nav {
@@ -40,6 +81,10 @@
             gap: 2rem;
             padding: 1rem;
             background-color: rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         
         nav a {
@@ -47,23 +92,97 @@
             text-decoration: none;
             font-weight: 500;
             transition: 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
         }
         
         nav a:hover {
             color: var(--secondary);
         }
         
+        nav a:hover::after {
+            width: 100%;
+        }
+        
         .hero {
             text-align: center;
             padding: 4rem 2rem;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--light), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes text-glow {
+            from {
+                text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+            }
+            to {
+                text-shadow: 0 0 15px rgba(255, 149, 0, 0.5);
+            }
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
         }
         
         .episode-card {
             background: rgba(255,255,255,0.1);
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1.5rem;
             margin: 2rem auto;
             max-width: 800px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .episode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .episode-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+        
+        .episode-card h2 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        
+        .video-container {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .qr-code {
@@ -72,61 +191,61 @@
             display: block;
         }
 
-/* resources list  */
-.resources-list {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0;
-}
+        /* resources list  */
+        .resources-list {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0;
+        }
 
-.resources-list ul {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
-}
+        .resources-list ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
 
-.resources-list li {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    border-left: 3px solid var(--primary);
-}
+        .resources-list li {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border-left: 3px solid var(--primary);
+        }
 
-.resources-list li:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-    border-left-color: var(--secondary);
-}
+        .resources-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            border-left-color: var(--secondary);
+        }
 
-.resources-list a {
-    display: block;
-    padding: 1rem;
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 500;
-}
+        .resources-list a {
+            display: block;
+            padding: 1rem;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-.resources-list a:hover {
-    color: var(--secondary);
-}
+        .resources-list a:hover {
+            color: var(--secondary);
+        }
 
-.resources-list .list-header {
-    grid-column: 1 / -1;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--secondary);
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 0.5rem;
-}
+        .resources-list .list-header {
+            grid-column: 1 / -1;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
 
-/* For mobile responsiveness */
-@media (max-width: 768px) {
-    .resources-list ul {
-        grid-template-columns: 1fr;
-    }
-}
+        /* For mobile responsiveness */
+        @media (max-width: 768px) {
+            .resources-list ul {
+                grid-template-columns: 1fr;
+            }
+        }
         
         .credits {
             background: rgba(255,255,255,0.1);
@@ -164,27 +283,71 @@
             border-top: 1px solid rgba(255,255,255,0.2);
         }
         
-  
-  .support-detail {
-    font-size: 0.9em;
-    opacity: 0.8;
-  }
-  
-  .info-link {
-    color: var(--secondary);
-    margin-left: 4px;
-    vertical-align: middle;
-  }
-  
-  .info-link svg {
-    display: inline-block;
-    vertical-align: baseline;
-  }
+        .support-detail {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+        
+        .info-link {
+            color: var(--secondary);
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+        
+        .info-link svg {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        
         footer {
             text-align: center;
             padding: 2rem;
             background-color: #000;
             margin-top: 2rem;
+        }
+        
+        /* Floating elements for visual interest */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary), transparent);
+            opacity: 0.1;
+            animation: float 15s infinite ease-in-out;
+            z-index: -1;
+        }
+        
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+            background: radial-gradient(circle, var(--secondary), transparent);
+        }
+        
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: -10s;
+            background: radial-gradient(circle, var(--accent), transparent);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            33% {
+                transform: translateY(-20px) rotate(120deg);
+            }
+            66% {
+                transform: translateY(10px) rotate(240deg);
+            }
         }
         
         @media (max-width: 768px) {
@@ -196,11 +359,19 @@
             .header-logo {
                 max-width: 90%;
             }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    
     <header class="site-header">
         <img src="https://github.com/asiakay/legacy-and-code-roxbury/blob/main/assets/images/Legacy__Code-removebg-preview.png?raw=true" 
              alt="Legacy & Code" 
@@ -323,8 +494,6 @@
   </div>
 </div>
   
-  
-    
     <footer>
         <p>Follow us: @LegacyAndCode</p>
         <p>Produced in partnership with students from RCC's Spring 2025 BMT 110 course.</p>
