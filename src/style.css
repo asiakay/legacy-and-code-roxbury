@@ -1,0 +1,453 @@
+/******************************************************************************
+START Glitch hello-app default styles
+
+The styles in this section do some minimal CSS resets, set default fonts and 
+colors, and handle the layout for our footer and "Remix on Glitch" button. If
+you're new to CSS they may seem a little complicated, but you can scroll down
+to this section's matching END comment to see page-specific styles.
+******************************************************************************/
+
+
+/* 
+  The style rules specify elements by type and by attributes such as class and ID
+  Each section indicates an element or elements, then lists the style properties to apply
+  See if you can cross-reference the rules in this file with the elements in index.html
+*/
+
+:root {
+    --primary: #6E3BEC; /* Afro-futurist purple */
+    --secondary: #FF9500; /* Vibrant orange */
+    --accent: #00D4FF; /* Cyber blue */
+    --dark: #0A0A16;
+    --darker: #050510;
+    --light: #F5F5F5;
+    --neon-glow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--primary);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', 'Orbitron', sans-serif;
+    background-color: var(--darker);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Canvas backgrounds */
+#p5-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#webgl-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.2s ease;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.1s ease-out;
+}
+
+/* Header */
+.site-header {
+    position: relative;
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(110, 59, 236, 0.1) 0%, transparent 70%);
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 10;
+}
+
+.header-logo {
+    max-width: 500px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(110, 59, 236, 0.7));
+    animation: logo-pulse 4s infinite alternate;
+}
+
+@keyframes logo-pulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px rgba(110, 59, 236, 0.7));
+    }
+    100% {
+        transform: scale(1.03);
+        filter: drop-shadow(0 0 25px rgba(255, 149, 0, 0.8));
+    }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.8rem;
+    background: rgba(10, 10, 22, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(110, 59, 236, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 0 0 12px 12px;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(110, 59, 236, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+nav a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    box-shadow: var(--neon-glow);
+}
+
+nav a:hover::before {
+    left: 100%;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--light), var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    animation: text-shimmer 3s infinite alternate;
+}
+
+@keyframes text-shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Episode Cards */
+.episode-card {
+    background: rgba(20, 20, 40, 0.7);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(110, 59, 236, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.episode-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), var(--neon-glow);
+}
+
+.episode-card h2 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.video-container {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(110, 59, 236, 0.5);
+}
+
+/* Resources */
+.resources-list {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0;
+}
+
+.resources-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2rem;
+}
+
+.resources-list li {
+    background: rgba(30, 30, 60, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(110, 59, 236, 0.3);
+    overflow: hidden;
+}
+
+.resources-list li:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.resources-list a {
+    display: block;
+    padding: 1.2rem;
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.resources-list a:hover {
+    color: var(--accent);
+}
+
+.resources-list .list-header {
+    grid-column: 1 / -1;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: var(--secondary);
+    text-align: center;
+    text-shadow: 0 0 8px rgba(255, 149, 0, 0.5);
+}
+
+/* Credits */
+.credits {
+    background: rgba(20, 20, 40, 0.8);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    border: 1px solid rgba(110, 59, 236, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.acknowledgments {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.2rem;
+    border-left: 4px solid var(--secondary);
+    margin-bottom: 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.credit-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.credit-category {
+    font-weight: bold;
+    margin-top: 1.2rem;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+}
+
+copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(5, 5, 16, 0.9);
+    margin-top: 3rem;
+    border-top: 1px solid rgba(110, 59, 236, 0.3);
+    position: relative;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+/* Mouse Trail Canvas */
+#mouse-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9997;
+}
+
+/* Responsive design*/
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        padding: 0.6rem;
+        max-width: 95%;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        padding: 2rem 1rem 1rem;
+    }
+
+    .resources-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .episode-card {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .header-logo {
+        max-width: 350px;
+    }
+    
+    /* Show default cursor on mobile */
+    * {
+        cursor: auto;
+    }
+
+    .cursor, .cursor-follower {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
